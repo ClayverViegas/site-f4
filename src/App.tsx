@@ -1,5 +1,6 @@
 import { BadgeCheck, ClipboardList, HardHat } from "lucide-react";
 import { About } from "./components/About";
+import { ContactSection } from "./components/ContactSection";
 import { FeatureBar } from "./components/FeatureBar";
 import { FinalCTA } from "./components/FinalCTA";
 import { Footer } from "./components/Footer";
@@ -74,6 +75,7 @@ export default function App() {
         />
 
         <FinalCTA />
+        <ContactSection />
       </main>
       <Footer />
       <WhatsAppFab />

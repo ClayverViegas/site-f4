@@ -1,8 +1,5 @@
 import { MessageCircle, Send } from "lucide-react";
 import { gsap, useIsomorphicLayoutEffect } from "../hooks/useGsap";
-import { contact } from "../data/services";
-
-const wa = `https://wa.me/${contact.phoneRaw}?text=${encodeURIComponent(contact.whatsappMessage)}`;
 
 export function FinalCTA() {
   useIsomorphicLayoutEffect(() => {
@@ -18,7 +15,7 @@ export function FinalCTA() {
   });
 
   return (
-    <section id="contato" className="final-cta relative py-20 md:py-28">
+    <section className="final-cta relative py-20 md:py-28">
       <div className="container-page">
         <div className="relative overflow-hidden rounded-4xl border border-green-primary/20 bg-mist-gradient p-8 shadow-card md:p-14">
           <div className="pointer-events-none absolute -left-16 -top-16 h-72 w-72 rounded-full bg-green-primary/15 blur-3xl" />
@@ -48,7 +45,7 @@ export function FinalCTA() {
             </div>
 
             <div className="flex flex-wrap items-center gap-3">
-              <a href={wa} target="_blank" rel="noreferrer" className="btn-primary">
+              <a href="#contato" className="btn-primary">
                 <Send className="h-4 w-4" />
                 Solicitar orçamento
               </a>

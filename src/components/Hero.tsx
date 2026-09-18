@@ -1,11 +1,10 @@
-import { useEffect, useRef } from "react";
-import { ArrowRight, Play, Send, ShieldCheck } from "lucide-react";
+import { useRef } from "react";
+import { ArrowRight, Send, ShieldCheck } from "lucide-react";
 import { gsap, useIsomorphicLayoutEffect } from "../hooks/useGsap";
 
 export function Hero() {
   const root = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const progressRef = useRef<HTMLSpanElement>(null);
 
   useIsomorphicLayoutEffect(() => {
     const ease = "power3.out";
@@ -69,28 +68,6 @@ export function Hero() {
     });
   });
 
-  useEffect(() => {
-    const v = videoRef.current;
-    if (!v) return;
-    const fmt = (s: number) => {
-      const m = Math.floor(s / 60).toString().padStart(1, "0");
-      const sec = Math.floor(s % 60).toString().padStart(2, "0");
-      return `${m}:${sec}`;
-    };
-    const onTime = () => {
-      if (!progressRef.current) return;
-      const cur = fmt(v.currentTime || 0);
-      const dur = fmt(isFinite(v.duration) ? v.duration : 0);
-      progressRef.current.textContent = `${cur} / ${dur}`;
-    };
-    v.addEventListener("timeupdate", onTime);
-    v.addEventListener("loadedmetadata", onTime);
-    return () => {
-      v.removeEventListener("timeupdate", onTime);
-      v.removeEventListener("loadedmetadata", onTime);
-    };
-  }, []);
-
   return (
     <section
       id="inicio"
@@ -149,27 +126,6 @@ export function Hero() {
           >
             <source src="/videos/epi.mp4" type="video/mp4" />
           </video>
-
-          <button
-            type="button"
-            className="video-play"
-            onClick={() => {
-              const v = videoRef.current;
-              if (!v) return;
-              if (v.paused) v.play();
-              else v.pause();
-            }}
-            aria-label="Reproduzir ou pausar vídeo"
-          >
-            <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-green-gradient text-white">
-              <Play className="h-3.5 w-3.5" fill="white" />
-            </span>
-            Assista ao vídeo
-          </button>
-
-          <span ref={progressRef} className="video-progress">
-            0:00 / 0:00
-          </span>
         </div>
       </div>
     </section>

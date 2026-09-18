@@ -9,9 +9,9 @@ import { gsap, useIsomorphicLayoutEffect } from "../hooks/useGsap";
 const items = [
   {
     Icon: UsersRound,
-    highlight: "+ de 4",
-    title: "Profissionais",
-    subtitle: "especializadas",
+    highlight: "Profissionais",
+    title: "Especializados",
+    subtitle: "",
   },
   {
     Icon: HeartPulse,
@@ -121,9 +121,11 @@ export function WhyF4() {
                   <p className="text-sm font-semibold text-ink">
                     {it.title}
                   </p>
-                  <p className="mt-1 text-xs leading-relaxed text-muted">
-                    {it.subtitle}
-                  </p>
+                  {it.subtitle && (
+                    <p className="mt-1 text-xs leading-relaxed text-muted">
+                      {it.subtitle}
+                    </p>
+                  )}
                 </div>
               </div>
             ))}
