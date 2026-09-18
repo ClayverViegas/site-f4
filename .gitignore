@@ -12,3 +12,6 @@ vite.config.d.ts
 vite.config.js
 vite.config.d.ts.map
 vite.config.js.map
+
+# TS incremental build cache
+*.tsbuildinfo
