@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#18B85B"/>
+      <stop offset="100%" stop-color="#004D36"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#g)" d="M32 4l4 3 4.5-1.5L42 10l4 2 .5 4.5L50 20l-2 4 2 4-3.5 3.5L46 36l-4 2-1.5 4.5L36 41l-4 3-4-3-4 1.5L22.5 38 18 36l-.5-4.5L14 28l2-4-2-4 3.5-3.5L18 12l4-2 1.5-4.5L28 7z"/>
+  <circle cx="32" cy="32" r="12" fill="#FFFFFF"/>
+  <text x="32" y="37" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="14" text-anchor="middle" fill="#004D36">F4</text>
+</svg>

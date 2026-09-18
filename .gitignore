@@ -1,0 +1,14 @@
+node_modules
+dist
+dist-ssr
+*.local
+.env
+.env.*
+.DS_Store
+.vite
+
+# TS compile artifacts for the vite config
+vite.config.d.ts
+vite.config.js
+vite.config.d.ts.map
+vite.config.js.map
